@@ -1,0 +1,16 @@
+{
+  "name": "space-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack -p && cp ./release/space.min.js ./release/example/"
+  },
+  "author": "benjamin",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^5.8.38",
+    "babel-loader": "^5.4.0",
+    "webpack": "^1.13.2"
+  }
+}
