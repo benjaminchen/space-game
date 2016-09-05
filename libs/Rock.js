@@ -10,12 +10,22 @@ class Rock {
         this.exploded = false;
     }
 
-    draw(ctx) {
+    draw(ctx, bullets) {
+        var me, right, bottom;
+
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         if (! this.exploded) this.y += this.speed;
-    }
 
-    explode() {}
+        me = this;
+        right = this.x + this.width;
+        bottom = this.y + this.height * 0.6;
+        bullets.forEach(function(bullet, index) {
+            if (bullet.y <= bottom && (bullet.x >= me.x && bullet.x <= right)) {
+                me.exploded = true;
+                bullets.splice(index, 1);
+            }
+        });
+    }
 }
 
 export default Rock;
