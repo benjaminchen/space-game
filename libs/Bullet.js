@@ -1,13 +1,15 @@
 class Bullet {
-    constructor(x, y, speed) {
-        this.img = document.getElementById("bullet");
-        this.x = x - this.img.width / 2;
+    constructor(bulletImg, x, y, speed) {
+        this.img = bulletImg;
+        this.x = x - bulletImg.width / 2;
         this.y = y;
+        this.width = bulletImg.width;
+        this.height = bulletImg.height;
         this.speed = speed;
     }
 
     draw(ctx) {
-        ctx.drawImage(this.img, this.x, this.y, this.img.width, this.img.height);
+        ctx.drawImage(this.img, this.x, this.y);
         this.y -= this.speed;
     }
 }
